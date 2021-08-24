@@ -16,8 +16,8 @@ from keras.utils import np_utils # utilities for one-hot encoding of ground trut
 from keras.callbacks import ModelCheckpoint
 
 #constants
-WIDTH = 500#384
-HEIGHT = 375#512
+WIDTH = 640#384
+HEIGHT = 360#512
 
 def scaleData(inp, minimum, maximum):
     minMaxScaler = preprocessing.MinMaxScaler(copy=True, feature_range=(minimum,maximum))
@@ -106,9 +106,9 @@ def readImageSet(imageFiles, trainImagePath, X_LL, X_LH, X_HL, X_HH, X_index, Y,
             sampleIndex = sampleIndex + 1
 
         #read 180deg FLIP data
-        ret = readAndScaleImage(f, '_180_FLIP', trainImagePath, X_LL, X_LH, X_HL, X_HH, X_index, Y, sampleIndex, bClass)
-        if ret == True:
-            sampleIndex = sampleIndex + 1
+#         ret = readAndScaleImage(f, '_180_FLIP', trainImagePath, X_LL, X_LH, X_HL, X_HH, X_index, Y, sampleIndex, bClass)
+#         if ret == True:
+#             sampleIndex = sampleIndex + 1
      
     return sampleIndex
             
